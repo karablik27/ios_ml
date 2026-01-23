@@ -7,12 +7,10 @@
 
 import Vision
 import CoreML
-import UIKit
 
 final class ImageClassifier: ImageClassifierProtocol {
 
     private let vnModel: VNCoreMLModel
-    
 
     init(type: ClassifierType) throws {
         let config = MLModelConfiguration()
@@ -46,12 +44,5 @@ final class ImageClassifier: ImageClassifierProtocol {
         }
 
         return best
-    }
-    
-    private func softmax(_ values: [Float]) -> [Float] {
-        let maxVal = values.max() ?? 0
-        let expValues = values.map { exp($0 - maxVal) }
-        let sum = expValues.reduce(0, +)
-        return expValues.map { $0 / sum }
     }
 }

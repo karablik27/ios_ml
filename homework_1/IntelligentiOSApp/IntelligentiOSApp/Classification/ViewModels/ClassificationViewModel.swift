@@ -20,9 +20,9 @@ final class ClassificationViewModel: ObservableObject {
         self.classifier = classifier
     }
 
-    func classify(imageName: String) {
+    func classify(image: UIImage?) {
         guard
-            let image = UIImage(named: imageName),
+            let image,
             let cgImage = image.cgImage
         else {
             resultText = "Нет изображения"
