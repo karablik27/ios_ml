@@ -1,0 +1,51 @@
+{
+  "activityEntities" : [
+    "dataSourceCreated",
+    [
+      {
+        "createdDate" : "2026-01-22T22:52:27Z",
+        "event" : "dataSourceCreated",
+        "id" : "95B120EC-AC8D-4224-B017-B9EF009D72CB",
+        "subtitle" : "cats_vs_dogs_dataset",
+        "title" : "Data Source Created"
+      }
+    ],
+    "dataSourceTrainingStarted",
+    [
+      {
+        "createdDate" : "2026-01-22T22:53:15Z",
+        "event" : "dataSourceTrainingStarted",
+        "id" : "9B795BD9-09D1-4861-9B68-92C73D2EA032",
+        "subtitle" : "ImageClassifier_hw1 1",
+        "title" : "Used By"
+      }
+    ],
+    "dataSourceMetrics",
+    [
+      {
+        "createdDate" : "2026-01-22T22:53:15Z",
+        "event" : "dataSourceMetrics",
+        "id" : "BC9E5B45-B224-40AE-8D58-3345889CAD41",
+        "subtitle" : "2 Classes, 1 000 Items",
+        "title" : "Data Summary"
+      }
+    ]
+  ],
+  "createdDate" : "2026-01-22T22:52:27Z",
+  "dataPathRelativeToProjectURL" : "../../../../Downloads/cats_vs_dogs_dataset/",
+  "dataResult" : {
+    "createdDate" : "2026-01-22T22:52:27Z",
+    "dataSourceID" : "FABED839-F857-4B89-B03E-1EAF56A8A72D",
+    "dataURL" : "file:///Users/verhovnyjmag/Downloads/cats_vs_dogs_dataset/"
+  },
+  "dataURL" : "file:///Users/verhovnyjmag/Downloads/cats_vs_dogs_dataset/",
+  "experimentIDs" : [
+    "D90E2D3E-9F35-441D-855F-355816106AFC"
+  ],
+  "id" : "FABED839-F857-4B89-B03E-1EAF56A8A72D",
+  "modifiedDate" : "2026-01-22T22:53:15Z",
+  "pathType" : 0,
+  "preferredFilename" : "cats_vs_dogs_dataset",
+  "title" : "cats_vs_dogs_dataset",
+  "version" : "1.0"
+}

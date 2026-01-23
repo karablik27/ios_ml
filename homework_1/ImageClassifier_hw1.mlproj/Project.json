@@ -1,0 +1,29 @@
+{
+  "activityEntities" : [
+    "projectCreated",
+    [
+      {
+        "createdDate" : "2026-01-22T22:44:42Z",
+        "event" : "projectCreated",
+        "id" : "C1437E2D-B2C9-4B6A-9397-0638CFD75480",
+        "subtitle" : "ImageClassifier_hw1",
+        "title" : "Project Created"
+      }
+    ]
+  ],
+  "authorName" : "Верховный Маг",
+  "createdDate" : "2026-01-22T22:44:42Z",
+  "description" : "",
+  "id" : "439FB49C-1450-4351-87D2-792D4121C90E",
+  "license" : "",
+  "location" : "",
+  "modifiedDate" : "2026-01-22T22:44:42Z",
+  "projectName" : "ImageClassifier_hw1",
+  "settingsEntity" : {
+    "snapshotOnExtendTraining" : true,
+    "snapshotOnResumeTraining" : false
+  },
+  "taskType" : "imageClassifier",
+  "title" : "Image Classification",
+  "version" : "1.1"
+}
