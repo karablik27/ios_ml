@@ -2,7 +2,7 @@
 //  ClassificationView.swift
 //  IntelligentiOSApp
 //
-//  Created by Верховный Маг on 23.01.2026.
+//  Created by Karabelnikov Stepan on 23.01.2026.
 //
 
 import SwiftUI
@@ -57,7 +57,7 @@ struct ClassificationView: View {
             .disabled(selectedImage == nil)
         }
         .padding()
-        .onChange(of: selectedItem) { newItem in
+        .onChange(of: selectedItem) { _, newItem in
             Task {
                 if let data = try? await newItem?.loadTransferable(type: Data.self),
                    let uiImage = UIImage(data: data) {

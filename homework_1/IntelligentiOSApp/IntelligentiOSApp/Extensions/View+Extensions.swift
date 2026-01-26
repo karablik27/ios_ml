@@ -2,7 +2,7 @@
 //  View+Extensions.swift
 //  IntelligentiOSApp
 //
-//  Created by Верховный Маг on 23.01.2026.
+//  Created by Karabelnikov Stepan on 23.01.2026.
 //
 
 import SwiftUI
