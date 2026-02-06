@@ -2,12 +2,13 @@
 //  SentimentAnalyzer.swift
 //  SentimentAnalyzer
 //
-//  Created by Верховный Маг on 23.01.2026.
+//  Created by Karabelnikov Stepan on 23.01.2026.
 //
 
 import Foundation
 import SwiftUI
-enum Sentiment: String {
+
+enum Sentiment: String, Codable {
     case positive = "Позитивный"
     case negative = "Негативный"
     case neutral = "Нейтральный"
@@ -28,7 +29,8 @@ enum Sentiment: String {
         }
     }
 }
-struct TextAnalysisResult {
+
+struct TextAnalysisResult: Codable {
     let text: String
     let sentiment: Sentiment
     let confidence: Double
@@ -38,12 +40,12 @@ struct TextAnalysisResult {
     let details: [AnalysisDetail]
     let timestamp: Date
     
-    struct AnalysisDetail {
+    struct AnalysisDetail: Codable {
         let title: String
         let value: String
         let type: DetailType
         
-        enum DetailType {
+        enum DetailType: String, Codable {
             case info, warning, success, error
         }
     }

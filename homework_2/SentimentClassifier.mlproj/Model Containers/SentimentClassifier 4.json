@@ -1,0 +1,587 @@
+{
+  "activityEntities" : [
+    "experimentCreated",
+    [
+      {
+        "createdDate" : "2026-02-06T14:15:14Z",
+        "event" : "experimentCreated",
+        "id" : "BEEEC95F-B25E-4459-8002-0053721EB757",
+        "subtitle" : "SentimentClassifier 4",
+        "title" : "Model Source Created"
+      }
+    ],
+    "trainingStarted",
+    [
+      {
+        "createdDate" : "2026-02-06T14:15:23Z",
+        "event" : "trainingStarted",
+        "id" : "FC9D2F0D-FDCE-42B8-8C44-42AEF28816D7",
+        "subtitle" : "10 iterations",
+        "title" : "Training Started"
+      }
+    ],
+    "trainingDataAdded",
+    [
+      {
+        "createdDate" : "2026-02-06T14:15:20Z",
+        "event" : "trainingDataAdded",
+        "id" : "CC6519CE-406D-4055-800D-70DA637F28BC",
+        "subtitle" : "toxicity_2000.csv",
+        "title" : "Training Data Added"
+      }
+    ],
+    "trainingFinished",
+    [
+      {
+        "createdDate" : "2026-02-06T14:15:24Z",
+        "event" : "trainingFinished",
+        "id" : "3B68D778-4B45-49F9-9994-E695A041DAB9",
+        "subtitle" : "Model converged at 2 iterations",
+        "title" : "Training Completed"
+      }
+    ]
+  ],
+  "contentDataResult" : {
+    "createdDate" : "2026-02-06T14:15:20Z"
+  },
+  "createdDate" : "2026-02-06T14:15:14Z",
+  "evaluationContainerEntity" : {
+    "createdDate" : "2026-02-06T14:15:24Z",
+    "evaluationEntities" : [
+      {
+        "analysedDataType" : "none",
+        "createdDate" : "2026-02-06T14:15:24Z",
+        "dataResult" : {
+
+        },
+        "id" : "5e9b8026-bc81-45b8-af11-045a2d0faf79"
+      }
+    ],
+    "id" : "6b9b3dc9-12b6-4d73-bd45-2f1ac28d2de9",
+    "modifiedDate" : "2026-02-06T14:15:24Z",
+    "previewType" : "textClassifier",
+    "testingEvaluationEntity" : {
+      "analysedDataType" : "none",
+      "createdDate" : "2026-02-06T14:15:14Z",
+      "dataResult" : {
+        "createdDate" : "2026-02-06T14:15:20Z"
+      },
+      "id" : "be8cff68-cc24-4a5b-87c7-0ffc7441f09b"
+    },
+    "trainingEvaluationEntity" : {
+      "analysedDataType" : "none",
+      "createdDate" : "2026-02-06T14:15:14Z",
+      "dataResult" : {
+        "classesCount" : 2,
+        "createdDate" : "2026-02-06T14:15:20Z",
+        "dataAnalysis" : {
+          "classifierAnalysis" : {
+            "labelStats" : {
+              "non_toxic" : 1000,
+              "toxic" : 1000
+            }
+          },
+          "issues" : [
+            {
+              "description" : "2 classes found, including toxic, non_toxic",
+              "severity" : "debug"
+            },
+            {
+              "description" : "2000 texts found, automatically creating validation set",
+              "severity" : "good"
+            },
+            {
+              "description" : "Smallest class is \"non_toxic\" with 1000 texts",
+              "severity" : "debug"
+            },
+            {
+              "description" : "Largest class is \"toxic\" with 1000 text",
+              "severity" : "debug"
+            }
+          ],
+          "objectDetectorAnalysis" : {
+            "details" : {
+
+            }
+          },
+          "summary" : {
+            "canUseValidation" : 1,
+            "classCount" : 2,
+            "sampleCount" : 2000
+          }
+        },
+        "dataSourceID" : "F5CF41D6-294D-4205-823D-BEA3074A1964",
+        "dataURL" : "file:///Users/verhovnyjmag/Downloads/toxicity_2000.csv",
+        "itemsCount" : 2000
+      },
+      "dataSourceID" : "F5CF41D6-294D-4205-823D-BEA3074A1964",
+      "evaluationResult" : {
+        "textClassifier" : {
+          "accuracy" : 1,
+          "confusionMatrix" : [
+            {
+              "actual" : "non_toxic",
+              "count" : 951,
+              "expected" : "non_toxic"
+            },
+            {
+              "actual" : "toxic",
+              "count" : 949,
+              "expected" : "toxic"
+            }
+          ],
+          "statsByLabel" : {
+            "non_toxic" : {
+              "count" : 951,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            },
+            "toxic" : {
+              "count" : 949,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            }
+          }
+        }
+      },
+      "id" : "1ff5adf3-65d0-4a08-8e0d-fd72b9582331"
+    },
+    "validationEvaluationEntity" : {
+      "analysedDataType" : "auto",
+      "createdDate" : "2026-02-06T14:15:14Z",
+      "dataResult" : {
+        "createdDate" : "2026-02-06T14:15:20Z"
+      },
+      "evaluationResult" : {
+        "textClassifier" : {
+          "accuracy" : 1,
+          "confusionMatrix" : [
+            {
+              "actual" : "non_toxic",
+              "count" : 49,
+              "expected" : "non_toxic"
+            },
+            {
+              "actual" : "toxic",
+              "count" : 51,
+              "expected" : "toxic"
+            }
+          ],
+          "statsByLabel" : {
+            "non_toxic" : {
+              "count" : 49,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            },
+            "toxic" : {
+              "count" : 51,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            }
+          }
+        }
+      },
+      "id" : "37034ff3-caf6-44e3-9e92-8bd8504c5b41"
+    }
+  },
+  "evaluationEntity" : {
+    "analysedDataType" : "none",
+    "dataResult" : {
+
+    },
+    "id" : "14dd4d2a-10bb-4dd4-bdd8-93217fa1491a"
+  },
+  "evaluationState" : "uninitialized",
+  "id" : "4C1B1BFA-C278-443C-83F0-0155CD011F1F",
+  "modelEntity" : {
+    "createdDate" : "2026-02-06T14:15:14Z",
+    "experimentID" : "4C1B1BFA-C278-443C-83F0-0155CD011F1F",
+    "id" : "9C50F71B-7412-4190-8CED-6B274DCE226D",
+    "modelURL" : "Models/SentimentClassifier%204.mlmodel",
+    "modifiedDate" : "2026-02-06T14:15:14Z",
+    "title" : "",
+    "version" : "1.0"
+  },
+  "modifiedDate" : "2026-02-06T14:15:24Z",
+  "preferredFilename" : "SentimentClassifier 4",
+  "settingEntity" : {
+    "algorithmType" : "maxEnt",
+    "augmentations" : [
+
+    ],
+    "featureNames" : [
+
+    ],
+    "handActionClassifierAugmentations" : [
+
+    ],
+    "handPoseClassifierAugmentations" : [
+
+    ],
+    "harVideoAugmentations" : 0,
+    "iterationCount" : 10,
+    "seedType" : "default",
+    "styleTransferAlgorithmType" : "image",
+    "taskType" : "textClassifier",
+    "textClassifierArabicLanguage" : "automatic",
+    "textClassifierCJKLanguage" : "automatic",
+    "textClassifierCyrillicLanguage" : "automatic",
+    "textClassifierIndicLanguage" : "automatic",
+    "textClassifierLatin" : "automatic",
+    "textClassifierScript" : "latin",
+    "textClassifierThaiLanguage" : "automatic"
+  },
+  "snapshotRole" : {
+    "withoutSnapshots" : 0
+  },
+  "state" : "trained",
+  "title" : "SentimentClassifier 4",
+  "trainingEntity" : {
+    "analysedDataType" : "datasource",
+    "checkpointMetrics" : {
+
+    },
+    "dataResult" : {
+      "classesCount" : 2,
+      "createdDate" : "2026-02-06T14:15:20Z",
+      "dataAnalysis" : {
+        "classifierAnalysis" : {
+          "labelStats" : {
+            "non_toxic" : 1000,
+            "toxic" : 1000
+          }
+        },
+        "issues" : [
+          {
+            "description" : "2 classes found, including toxic, non_toxic",
+            "severity" : "debug"
+          },
+          {
+            "description" : "2000 texts found, automatically creating validation set",
+            "severity" : "good"
+          },
+          {
+            "description" : "Smallest class is \"non_toxic\" with 1000 texts",
+            "severity" : "debug"
+          },
+          {
+            "description" : "Largest class is \"toxic\" with 1000 text",
+            "severity" : "debug"
+          }
+        ],
+        "objectDetectorAnalysis" : {
+          "details" : {
+
+          }
+        },
+        "summary" : {
+          "canUseValidation" : 1,
+          "classCount" : 2,
+          "sampleCount" : 2000
+        }
+      },
+      "dataSourceID" : "F5CF41D6-294D-4205-823D-BEA3074A1964",
+      "dataURL" : "file:///Users/verhovnyjmag/Downloads/toxicity_2000.csv",
+      "itemsCount" : 2000
+    },
+    "dataSourceID" : "F5CF41D6-294D-4205-823D-BEA3074A1964",
+    "featureExtractionCheckpointMayBeAvailable" : false,
+    "finishTime" : "2026-02-06T14:15:24Z",
+    "progress" : [
+      {
+        "count" : 1,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 1,
+        "tcTrainingColumnHeader" : {
+          "elapsedTime" : 0,
+          "hasTraining" : true,
+          "hasValidation" : false,
+          "remainingIterationCount" : 10,
+          "trainingAccuracy" : 0.5005263090133667,
+          "validationAccuracy" : 0
+        }
+      },
+      {
+        "count" : 2,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : true,
+        "tableIndex" : 1,
+        "tcTrainingColumnHeader" : {
+          "elapsedTime" : 0,
+          "hasTraining" : true,
+          "hasValidation" : false,
+          "remainingIterationCount" : 9,
+          "trainingAccuracy" : 1,
+          "validationAccuracy" : 0
+        }
+      },
+      {
+        "count" : 100,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 200,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 300,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 400,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 500,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 600,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 700,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 800,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 900,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 1000,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 1100,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 1200,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 1300,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 1400,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 1500,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 1600,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 1700,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 1800,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 1900,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : true,
+        "tableIndex" : 0
+      }
+    ],
+    "snapshottableCheckpoints" : {
+
+    },
+    "startTime" : "2026-02-06T14:15:23Z",
+    "trainingAccuracy" : 1,
+    "trainingResults" : {
+      "textClassifier" : {
+        "accuracy" : 1,
+        "confusionMatrix" : [
+          {
+            "actual" : "non_toxic",
+            "count" : 951,
+            "expected" : "non_toxic"
+          },
+          {
+            "actual" : "toxic",
+            "count" : 949,
+            "expected" : "toxic"
+          }
+        ],
+        "statsByLabel" : {
+          "non_toxic" : {
+            "count" : 951,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 1
+              }
+            }
+          },
+          "toxic" : {
+            "count" : 949,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "validationAccuracy" : 1,
+    "validationResults" : {
+      "textClassifier" : {
+        "accuracy" : 1,
+        "confusionMatrix" : [
+          {
+            "actual" : "non_toxic",
+            "count" : 49,
+            "expected" : "non_toxic"
+          },
+          {
+            "actual" : "toxic",
+            "count" : 51,
+            "expected" : "toxic"
+          }
+        ],
+        "statsByLabel" : {
+          "non_toxic" : {
+            "count" : 49,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 1
+              }
+            }
+          },
+          "toxic" : {
+            "count" : 51,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 1
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "validationEntity" : {
+    "analysedDataType" : "auto",
+    "dataResult" : {
+      "createdDate" : "2026-02-06T14:15:20Z"
+    },
+    "splitOptions" : {
+      "strategy" : {
+        "automatic" : {
+
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

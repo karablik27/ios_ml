@@ -1,0 +1,661 @@
+{
+  "activityEntities" : [
+    "trainingStarted",
+    [
+      {
+        "createdDate" : "2026-02-06T12:36:46Z",
+        "event" : "trainingStarted",
+        "id" : "13C4B1C8-8326-456D-939B-9BD5B2D5BD79",
+        "subtitle" : "10 iterations",
+        "title" : "Training Started"
+      }
+    ],
+    "experimentCreated",
+    [
+      {
+        "createdDate" : "2026-02-06T12:36:38Z",
+        "event" : "experimentCreated",
+        "id" : "156F4F4E-7921-4186-9772-345D22189C35",
+        "subtitle" : "SentimentClassifier 3",
+        "title" : "Model Source Created"
+      }
+    ],
+    "trainingFinished",
+    [
+      {
+        "createdDate" : "2026-02-06T12:36:47Z",
+        "event" : "trainingFinished",
+        "id" : "17BC0DAA-0AA0-48CB-A37D-A02D5E4CE783",
+        "subtitle" : "Model converged at 3 iterations",
+        "title" : "Training Completed"
+      }
+    ],
+    "trainingDataAdded",
+    [
+      {
+        "createdDate" : "2026-02-06T12:36:42Z",
+        "event" : "trainingDataAdded",
+        "id" : "A4006829-3B06-4880-A4A8-44331954D326",
+        "subtitle" : "sentiment_2000.csv",
+        "title" : "Training Data Added"
+      }
+    ]
+  ],
+  "contentDataResult" : {
+    "createdDate" : "2026-02-06T12:36:42Z"
+  },
+  "createdDate" : "2026-02-06T12:36:38Z",
+  "evaluationContainerEntity" : {
+    "createdDate" : "2026-02-06T12:36:47Z",
+    "evaluationEntities" : [
+      {
+        "analysedDataType" : "none",
+        "createdDate" : "2026-02-06T12:36:47Z",
+        "dataResult" : {
+
+        },
+        "id" : "ffdebf9f-a789-4b3f-9dee-5d7211d7aa27"
+      }
+    ],
+    "id" : "c670bad4-1532-4051-9ab9-3e5afbbacbd4",
+    "modifiedDate" : "2026-02-06T12:36:47Z",
+    "previewType" : "textClassifier",
+    "testingEvaluationEntity" : {
+      "analysedDataType" : "none",
+      "createdDate" : "2026-02-06T12:36:38Z",
+      "dataResult" : {
+        "createdDate" : "2026-02-06T12:36:42Z"
+      },
+      "id" : "a92d60e3-0946-4296-b5d5-9747dd5f2205"
+    },
+    "trainingEvaluationEntity" : {
+      "analysedDataType" : "none",
+      "createdDate" : "2026-02-06T12:36:38Z",
+      "dataResult" : {
+        "classesCount" : 3,
+        "createdDate" : "2026-02-06T12:36:42Z",
+        "dataAnalysis" : {
+          "classifierAnalysis" : {
+            "labelStats" : {
+              "negative" : 700,
+              "neutral" : 600,
+              "positive" : 700
+            }
+          },
+          "issues" : [
+            {
+              "description" : "3 classes found, including positive, negative, neutral",
+              "severity" : "debug"
+            },
+            {
+              "description" : "2000 texts found, automatically creating validation set",
+              "severity" : "good"
+            },
+            {
+              "description" : "Smallest class is \"neutral\" with 600 texts",
+              "severity" : "debug"
+            },
+            {
+              "description" : "Largest class is \"positive\" with 700 text",
+              "severity" : "debug"
+            }
+          ],
+          "objectDetectorAnalysis" : {
+            "details" : {
+
+            }
+          },
+          "summary" : {
+            "canUseValidation" : 1,
+            "classCount" : 3,
+            "sampleCount" : 2000
+          }
+        },
+        "dataSourceID" : "B6CCD283-CBF6-4C3E-9578-D510AB4738F7",
+        "dataURL" : "file:///Users/verhovnyjmag/Downloads/sentiment_2000.csv",
+        "itemsCount" : 2000
+      },
+      "dataSourceID" : "B6CCD283-CBF6-4C3E-9578-D510AB4738F7",
+      "evaluationResult" : {
+        "textClassifier" : {
+          "accuracy" : 1,
+          "confusionMatrix" : [
+            {
+              "actual" : "negative",
+              "count" : 654,
+              "expected" : "negative"
+            },
+            {
+              "actual" : "neutral",
+              "count" : 576,
+              "expected" : "neutral"
+            },
+            {
+              "actual" : "positive",
+              "count" : 670,
+              "expected" : "positive"
+            }
+          ],
+          "statsByLabel" : {
+            "negative" : {
+              "count" : 654,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            },
+            "neutral" : {
+              "count" : 576,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            },
+            "positive" : {
+              "count" : 670,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            }
+          }
+        }
+      },
+      "id" : "6a1133b2-d5c0-45a4-83a8-7d2fb9183157"
+    },
+    "validationEvaluationEntity" : {
+      "analysedDataType" : "auto",
+      "createdDate" : "2026-02-06T12:36:38Z",
+      "dataResult" : {
+        "createdDate" : "2026-02-06T12:36:42Z"
+      },
+      "evaluationResult" : {
+        "textClassifier" : {
+          "accuracy" : 1,
+          "confusionMatrix" : [
+            {
+              "actual" : "negative",
+              "count" : 46,
+              "expected" : "negative"
+            },
+            {
+              "actual" : "neutral",
+              "count" : 24,
+              "expected" : "neutral"
+            },
+            {
+              "actual" : "positive",
+              "count" : 30,
+              "expected" : "positive"
+            }
+          ],
+          "statsByLabel" : {
+            "negative" : {
+              "count" : 46,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            },
+            "neutral" : {
+              "count" : 24,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            },
+            "positive" : {
+              "count" : 30,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            }
+          }
+        }
+      },
+      "id" : "a8ea3900-8326-4a59-b072-cbb69570608d"
+    }
+  },
+  "evaluationEntity" : {
+    "analysedDataType" : "none",
+    "dataResult" : {
+
+    },
+    "id" : "03765e60-229b-4edc-8cdc-11a7e1092489"
+  },
+  "evaluationState" : "uninitialized",
+  "id" : "86CCE455-FC52-4346-8E99-DAF83C175AAD",
+  "modelEntity" : {
+    "createdDate" : "2026-02-06T12:36:38Z",
+    "experimentID" : "86CCE455-FC52-4346-8E99-DAF83C175AAD",
+    "id" : "9411198E-1631-4EE0-A5E3-74D7C65C17A6",
+    "modelURL" : "Models/SentimentClassifier%203.mlmodel",
+    "modifiedDate" : "2026-02-06T12:36:38Z",
+    "title" : "",
+    "version" : "1.0"
+  },
+  "modifiedDate" : "2026-02-06T12:36:47Z",
+  "preferredFilename" : "SentimentClassifier 3",
+  "settingEntity" : {
+    "algorithmType" : "maxEnt",
+    "augmentations" : [
+
+    ],
+    "featureNames" : [
+
+    ],
+    "handActionClassifierAugmentations" : [
+
+    ],
+    "handPoseClassifierAugmentations" : [
+
+    ],
+    "harVideoAugmentations" : 0,
+    "iterationCount" : 10,
+    "seedType" : "default",
+    "styleTransferAlgorithmType" : "image",
+    "taskType" : "textClassifier",
+    "textClassifierArabicLanguage" : "automatic",
+    "textClassifierCJKLanguage" : "automatic",
+    "textClassifierCyrillicLanguage" : "automatic",
+    "textClassifierIndicLanguage" : "automatic",
+    "textClassifierLatin" : "automatic",
+    "textClassifierScript" : "latin",
+    "textClassifierThaiLanguage" : "automatic"
+  },
+  "snapshotRole" : {
+    "withoutSnapshots" : 0
+  },
+  "state" : "trained",
+  "title" : "SentimentClassifier 3",
+  "trainingEntity" : {
+    "analysedDataType" : "datasource",
+    "checkpointMetrics" : {
+
+    },
+    "dataResult" : {
+      "classesCount" : 3,
+      "createdDate" : "2026-02-06T12:36:42Z",
+      "dataAnalysis" : {
+        "classifierAnalysis" : {
+          "labelStats" : {
+            "negative" : 700,
+            "neutral" : 600,
+            "positive" : 700
+          }
+        },
+        "issues" : [
+          {
+            "description" : "3 classes found, including positive, negative, neutral",
+            "severity" : "debug"
+          },
+          {
+            "description" : "2000 texts found, automatically creating validation set",
+            "severity" : "good"
+          },
+          {
+            "description" : "Smallest class is \"neutral\" with 600 texts",
+            "severity" : "debug"
+          },
+          {
+            "description" : "Largest class is \"positive\" with 700 text",
+            "severity" : "debug"
+          }
+        ],
+        "objectDetectorAnalysis" : {
+          "details" : {
+
+          }
+        },
+        "summary" : {
+          "canUseValidation" : 1,
+          "classCount" : 3,
+          "sampleCount" : 2000
+        }
+      },
+      "dataSourceID" : "B6CCD283-CBF6-4C3E-9578-D510AB4738F7",
+      "dataURL" : "file:///Users/verhovnyjmag/Downloads/sentiment_2000.csv",
+      "itemsCount" : 2000
+    },
+    "dataSourceID" : "B6CCD283-CBF6-4C3E-9578-D510AB4738F7",
+    "featureExtractionCheckpointMayBeAvailable" : false,
+    "finishTime" : "2026-02-06T12:36:47Z",
+    "progress" : [
+      {
+        "count" : 1,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 1,
+        "tcTrainingColumnHeader" : {
+          "elapsedTime" : 0,
+          "hasTraining" : true,
+          "hasValidation" : false,
+          "remainingIterationCount" : 10,
+          "trainingAccuracy" : 0.30315789580345154,
+          "validationAccuracy" : 0
+        }
+      },
+      {
+        "count" : 2,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 1,
+        "tcTrainingColumnHeader" : {
+          "elapsedTime" : 0,
+          "hasTraining" : true,
+          "hasValidation" : false,
+          "remainingIterationCount" : 9,
+          "trainingAccuracy" : 0.9842105507850647,
+          "validationAccuracy" : 0
+        }
+      },
+      {
+        "count" : 3,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : true,
+        "tableIndex" : 1,
+        "tcTrainingColumnHeader" : {
+          "elapsedTime" : 0,
+          "hasTraining" : true,
+          "hasValidation" : false,
+          "remainingIterationCount" : 8,
+          "trainingAccuracy" : 0.9994736909866333,
+          "validationAccuracy" : 0
+        }
+      },
+      {
+        "count" : 100,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 200,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 300,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 400,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 500,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 600,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 700,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 800,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 900,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 1000,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 1100,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 1200,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 1300,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 1400,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 1500,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 1600,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 1700,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 1800,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : false,
+        "tableIndex" : 0
+      },
+      {
+        "count" : 1900,
+        "currentRowIndex" : 0,
+        "isLast" : false,
+        "percentComplete" : 0,
+        "tableDone" : true,
+        "tableIndex" : 0
+      }
+    ],
+    "snapshottableCheckpoints" : {
+
+    },
+    "startTime" : "2026-02-06T12:36:46Z",
+    "trainingAccuracy" : 1,
+    "trainingResults" : {
+      "textClassifier" : {
+        "accuracy" : 1,
+        "confusionMatrix" : [
+          {
+            "actual" : "negative",
+            "count" : 654,
+            "expected" : "negative"
+          },
+          {
+            "actual" : "neutral",
+            "count" : 576,
+            "expected" : "neutral"
+          },
+          {
+            "actual" : "positive",
+            "count" : 670,
+            "expected" : "positive"
+          }
+        ],
+        "statsByLabel" : {
+          "negative" : {
+            "count" : 654,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 1
+              }
+            }
+          },
+          "neutral" : {
+            "count" : 576,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 1
+              }
+            }
+          },
+          "positive" : {
+            "count" : 670,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "validationAccuracy" : 1,
+    "validationResults" : {
+      "textClassifier" : {
+        "accuracy" : 1,
+        "confusionMatrix" : [
+          {
+            "actual" : "negative",
+            "count" : 46,
+            "expected" : "negative"
+          },
+          {
+            "actual" : "neutral",
+            "count" : 24,
+            "expected" : "neutral"
+          },
+          {
+            "actual" : "positive",
+            "count" : 30,
+            "expected" : "positive"
+          }
+        ],
+        "statsByLabel" : {
+          "negative" : {
+            "count" : 46,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 1
+              }
+            }
+          },
+          "neutral" : {
+            "count" : 24,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 1
+              }
+            }
+          },
+          "positive" : {
+            "count" : 30,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 1
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "validationEntity" : {
+    "analysedDataType" : "auto",
+    "dataResult" : {
+      "createdDate" : "2026-02-06T12:36:42Z"
+    },
+    "splitOptions" : {
+      "strategy" : {
+        "automatic" : {
+
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

@@ -1,0 +1,51 @@
+{
+  "activityEntities" : [
+    "dataSourceTrainingStarted",
+    [
+      {
+        "createdDate" : "2026-02-06T12:32:41Z",
+        "event" : "dataSourceTrainingStarted",
+        "id" : "756F93C1-5B9E-40EA-970A-FFAF8FC5C85D",
+        "subtitle" : "SentimentClassifier 2",
+        "title" : "Used By"
+      }
+    ],
+    "dataSourceMetrics",
+    [
+      {
+        "createdDate" : "2026-02-06T12:32:41Z",
+        "event" : "dataSourceMetrics",
+        "id" : "C652F763-9D33-41B9-B954-FCDF72850F19",
+        "subtitle" : "3 Classes, 1 000 Items",
+        "title" : "Data Summary"
+      }
+    ],
+    "dataSourceCreated",
+    [
+      {
+        "createdDate" : "2026-02-06T12:32:38Z",
+        "event" : "dataSourceCreated",
+        "id" : "706863C6-EDCE-4368-ADFF-8F35AF4E38FC",
+        "subtitle" : "sentiment_1000.csv",
+        "title" : "Data Source Created"
+      }
+    ]
+  ],
+  "createdDate" : "2026-02-06T12:32:38Z",
+  "dataPathRelativeToProjectURL" : "../../../../Downloads/sentiment_1000.csv/",
+  "dataResult" : {
+    "createdDate" : "2026-02-06T12:32:38Z",
+    "dataSourceID" : "A4B352D0-CEB4-4CD1-82CE-07A2E77655C2",
+    "dataURL" : "file:///Users/verhovnyjmag/Downloads/sentiment_1000.csv"
+  },
+  "dataURL" : "file:///Users/verhovnyjmag/Downloads/sentiment_1000.csv",
+  "experimentIDs" : [
+    "900D3855-FDC5-4C93-B1C5-D774893AF7FF"
+  ],
+  "id" : "A4B352D0-CEB4-4CD1-82CE-07A2E77655C2",
+  "modifiedDate" : "2026-02-06T12:32:41Z",
+  "pathType" : 0,
+  "preferredFilename" : "sentiment_1000.csv",
+  "title" : "sentiment_1000.csv",
+  "version" : "1.0"
+}

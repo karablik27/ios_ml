@@ -2,7 +2,7 @@
 //  AnalysisResultsView.swift
 //  SentimentAnalyzer
 //
-//  Created by Верховный Маг on 23.01.2026.
+//  Created by Karabelnikov Stepan on 23.01.2026.
 //
 import SwiftUI
 
@@ -16,14 +16,17 @@ struct AnalysisResultsView: View {
                     .padding()
             } else if let result = viewModel.result {
                 SentimentCard(result: result)
-                
+
                 ConfidenceIndicator(confidence: result.confidence)
-                
+
+                SentimentVisualization(result: result)
+
                 Text("Детали анализа:")
                     .font(.headline)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                
-                ForEach(result.details.prefix(3), id: \.title) { detail in
+
+                let summaryDetails = summaryDetails(from: result.details)
+                ForEach(summaryDetails, id: \.title) { detail in
                     AnalysisDetailRow(detail: detail)
                 }
             } else if let error = viewModel.errorMessage {
@@ -36,6 +39,23 @@ struct AnalysisResultsView: View {
         .shadow(color: .gray.opacity(0.2), radius: 5)
     }
 }
+
+private func summaryDetails(
+    from details: [TextAnalysisResult.AnalysisDetail]
+) -> [TextAnalysisResult.AnalysisDetail] {
+    var top = Array(details.prefix(3))
+    if let alert = details.first(where: { $0.title.contains("⚠️") }) {
+        if !top.contains(where: { $0.title == alert.title }) {
+            top.append(alert)
+        }
+        return top
+    }
+    if !top.contains(where: { $0.type == .warning }),
+       let warning = details.first(where: { $0.type == .warning }) {
+        top.append(warning)
+    }
+    return top
+}
 struct SentimentCard: View {
     let result: TextAnalysisResult
     
@@ -46,13 +66,13 @@ struct SentimentCard: View {
                     Text("Результат анализа")
                         .font(.caption)
                         .foregroundColor(.secondary)
-                    
+
                     HStack {
                         Text(result.sentiment.rawValue)
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(result.sentiment.color)
-                        
+
                         Text(result.sentiment.emoji)
                             .font(.title2)
                     }
@@ -64,13 +84,13 @@ struct SentimentCard: View {
                     Text("Уверенность")
                         .font(.caption)
                         .foregroundColor(.secondary)
-                    
+
                     Text("\(Int(result.confidence * 100))%")
                         .font(.title2)
                         .fontWeight(.semibold)
                 }
             }
-            
+
             Text("Язык: \(result.language)")
                 .font(.caption)
                 .foregroundColor(.secondary)
@@ -92,7 +112,7 @@ struct ConfidenceIndicator: View {
             Text("Уверенность модели:")
                 .font(.caption)
                 .foregroundColor(.secondary)
-            
+
             GeometryReader { geometry in
                 ZStack(alignment: .leading) {
                     // Фоновая линия
@@ -100,14 +120,14 @@ struct ConfidenceIndicator: View {
                         .fill(Color.gray.opacity(0.3))
                         .frame(height: 8)
                         .cornerRadius(4)
-                    
+
                     // Индикатор уверенности
                     Rectangle()
                         .fill(confidenceColor)
                         .frame(width: geometry.size.width * CGFloat(confidence),
                                height: 8)
                         .cornerRadius(4)
-                    
+
                     // Текущая позиция
                     Circle()
                         .fill(confidenceColor)
@@ -116,7 +136,7 @@ struct ConfidenceIndicator: View {
                 }
             }
             .frame(height: 20)
-            
+
             HStack {
                 Text("0%")
                 Spacer()
@@ -141,79 +161,6 @@ struct ConfidenceIndicator: View {
         }
     }
 }
-
-struct AnalysisDetailsView: View {
-    @ObservedObject var viewModel: AnalysisViewModel
-    @Binding var isExpanded: Bool
-    
-    var body: some View {
-        if isExpanded, !viewModel.analysisDetails.isEmpty {
-            VStack(alignment: .leading, spacing: 12) {
-                HStack {
-                    Text("Полные детали анализа")
-                        .font(.headline)
-                    
-                    Spacer()
-                    
-                    Button(action: { isExpanded = false }) {
-                        Image(systemName: "chevron.up")
-                    }
-                }
-                
-                ForEach(viewModel.analysisDetails, id: \.title) { detail in
-                    AnalysisDetailRow(detail: detail)
-                }
-            }
-            .padding()
-            .background(Color(.secondarySystemBackground))
-            .cornerRadius(12)
-        }
-    }
-}
-struct AnalysisDetailRow: View {
-    let detail: TextAnalysisResult.AnalysisDetail
-    
-    var body: some View {
-        HStack(alignment: .top) {
-            Image(systemName: iconName)
-                .foregroundColor(iconColor)
-                .frame(width: 20)
-            
-            VStack(alignment: .leading, spacing: 2) {
-                Text(detail.title)
-                    .font(.subheadline)
-                    .fontWeight(.medium)
-                
-                Text(detail.value)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
-            
-            Spacer()
-        }
-        .padding(.vertical, 4)
-    }
-    
-    private var iconName: String {
-        switch detail.type {
-        case .info: return "info.circle"
-        case .warning: return "exclamationmark.triangle"
-        case .success: return "checkmark.circle"
-        case .error: return "xmark.circle"
-        }
-    }
-    
-    private var iconColor: Color {
-        switch detail.type {
-        case .info: return .blue
-        case .warning: return .orange
-        case .success: return .green
-        case .error: return .red
-        }
-    }
-}
-
 
 struct ErrorView: View {
     let message: String

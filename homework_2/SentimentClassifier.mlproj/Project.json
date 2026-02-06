@@ -1,0 +1,29 @@
+{
+  "activityEntities" : [
+    "projectCreated",
+    [
+      {
+        "createdDate" : "2026-02-06T11:15:29Z",
+        "event" : "projectCreated",
+        "id" : "7DE5B593-96F0-4087-974B-666CCF31EFC1",
+        "subtitle" : "SentimentClassifier",
+        "title" : "Project Created"
+      }
+    ]
+  ],
+  "authorName" : "Верховный Маг",
+  "createdDate" : "2026-02-06T11:15:29Z",
+  "description" : "",
+  "id" : "0F1AE585-E97E-4B05-A35D-122C91449420",
+  "license" : "",
+  "location" : "",
+  "modifiedDate" : "2026-02-06T11:15:29Z",
+  "projectName" : "SentimentClassifier",
+  "settingsEntity" : {
+    "snapshotOnExtendTraining" : true,
+    "snapshotOnResumeTraining" : false
+  },
+  "taskType" : "textClassifier",
+  "title" : "Text Classification",
+  "version" : "1.1"
+}
