@@ -1,0 +1,90 @@
+{
+  "activityEntities" : [
+    "dataSourceMetrics",
+    [
+      {
+        "createdDate" : "2026-02-06T11:17:52Z",
+        "event" : "dataSourceMetrics",
+        "id" : "9C3C40CB-0663-49BA-9F27-2BFE5BED9DCE",
+        "subtitle" : "3 Classes, 60 Items",
+        "title" : "Data Summary"
+      }
+    ],
+    "dataSourceCreated",
+    [
+      {
+        "createdDate" : "2026-02-06T11:15:51Z",
+        "event" : "dataSourceCreated",
+        "id" : "9E879D60-BC4F-4BEE-B759-2151F07162F8",
+        "subtitle" : "sentiment.csv",
+        "title" : "Data Source Created"
+      }
+    ],
+    "dataSourceTrainingStarted",
+    [
+      {
+        "createdDate" : "2026-02-06T11:17:52Z",
+        "event" : "dataSourceTrainingStarted",
+        "id" : "0A7B0911-C0BF-4C99-86F9-DB9BE408CF33",
+        "subtitle" : "SentimentClassifier 1",
+        "title" : "Used By"
+      }
+    ]
+  ],
+  "createdDate" : "2026-02-06T11:15:51Z",
+  "dataPathRelativeToProjectURL" : "../../../sentiment.csv/",
+  "dataResult" : {
+    "classesCount" : 3,
+    "createdDate" : "2026-02-06T11:15:51Z",
+    "dataAnalysis" : {
+      "classifierAnalysis" : {
+        "labelStats" : {
+          "negative" : 20,
+          "neutral" : 20,
+          "positive" : 20
+        }
+      },
+      "issues" : [
+        {
+          "description" : "3 classes found, including negative, neutral, positive",
+          "severity" : "debug"
+        },
+        {
+          "description" : "60 texts found, automatically creating validation set",
+          "severity" : "good"
+        },
+        {
+          "description" : "Smallest class is \"positive\" with 20 texts",
+          "severity" : "debug"
+        },
+        {
+          "description" : "Largest class is \"negative\" with 20 text",
+          "severity" : "debug"
+        }
+      ],
+      "objectDetectorAnalysis" : {
+        "details" : {
+
+        }
+      },
+      "summary" : {
+        "canUseValidation" : 1,
+        "classCount" : 3,
+        "sampleCount" : 60
+      }
+    },
+    "dataSourceID" : "3614A8EA-7E94-42A7-8348-30DEECF6947D",
+    "dataURL" : "file:///Users/verhovnyjmag/Desktop/sentiment.csv",
+    "itemsCount" : 60
+  },
+  "dataURL" : "file:///Users/verhovnyjmag/Desktop/sentiment.csv",
+  "experimentIDs" : [
+    "CFED781F-5660-4004-95D6-E491F63AABCD"
+  ],
+  "id" : "3614A8EA-7E94-42A7-8348-30DEECF6947D",
+  "modifiedDate" : "2026-02-06T12:30:53Z",
+  "pathType" : 0,
+  "preferredFilename" : "sentiment.csv",
+  "title" : "sentiment.csv",
+  "version" : "1.0"
+}

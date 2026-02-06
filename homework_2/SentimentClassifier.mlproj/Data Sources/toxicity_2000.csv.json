@@ -1,0 +1,51 @@
+{
+  "activityEntities" : [
+    "dataSourceCreated",
+    [
+      {
+        "createdDate" : "2026-02-06T14:15:20Z",
+        "event" : "dataSourceCreated",
+        "id" : "7590C5D1-3BBB-4B23-9455-BCB2A46C336D",
+        "subtitle" : "toxicity_2000.csv",
+        "title" : "Data Source Created"
+      }
+    ],
+    "dataSourceMetrics",
+    [
+      {
+        "createdDate" : "2026-02-06T14:15:23Z",
+        "event" : "dataSourceMetrics",
+        "id" : "CCB1E1E3-71A4-4F49-8057-B12E4E057002",
+        "subtitle" : "2 Classes, 2 000 Items",
+        "title" : "Data Summary"
+      }
+    ],
+    "dataSourceTrainingStarted",
+    [
+      {
+        "createdDate" : "2026-02-06T14:15:23Z",
+        "event" : "dataSourceTrainingStarted",
+        "id" : "E8A74E7A-12EC-4196-B7AA-7F28D0B938D0",
+        "subtitle" : "SentimentClassifier 4",
+        "title" : "Used By"
+      }
+    ]
+  ],
+  "createdDate" : "2026-02-06T14:15:20Z",
+  "dataPathRelativeToProjectURL" : "../../../../Downloads/toxicity_2000.csv/",
+  "dataResult" : {
+    "createdDate" : "2026-02-06T14:15:20Z",
+    "dataSourceID" : "F5CF41D6-294D-4205-823D-BEA3074A1964",
+    "dataURL" : "file:///Users/verhovnyjmag/Downloads/toxicity_2000.csv"
+  },
+  "dataURL" : "file:///Users/verhovnyjmag/Downloads/toxicity_2000.csv",
+  "experimentIDs" : [
+    "4C1B1BFA-C278-443C-83F0-0155CD011F1F"
+  ],
+  "id" : "F5CF41D6-294D-4205-823D-BEA3074A1964",
+  "modifiedDate" : "2026-02-06T14:15:23Z",
+  "pathType" : 0,
+  "preferredFilename" : "toxicity_2000.csv",
+  "title" : "toxicity_2000.csv",
+  "version" : "1.0"
+}
