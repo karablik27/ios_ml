@@ -10,21 +10,32 @@ import UniformTypeIdentifiers
 
 struct ContentView: View {
     @EnvironmentObject private var appState: AppState
-    @StateObject private var viewModel = AnalysisViewModel()
-    @State private var inputText = "Я очень доволен этим продуктом! Работает отлично."
+    @StateObject private var analysisViewModel: AnalysisViewModel
+    @StateObject private var contentViewModel: ContentViewModel
+    @StateObject private var realTimeViewModel: RealTimeAnalysisViewModel
+    @StateObject private var historyViewModel: HistoryViewModel
     @State private var showingDetails = false
     @State private var showingHistory = false
     @State private var showingScanner = false
     @State private var showingPhotoPicker = false
-    @State private var isExporting = false
-    @State private var exportDocument: AnalysisExportDocument?
-    @State private var exportFileName = "analysis"
+
+    init(
+        analysisViewModel: @autoclosure @escaping () -> AnalysisViewModel,
+        contentViewModel: @autoclosure @escaping () -> ContentViewModel,
+        realTimeViewModel: @autoclosure @escaping () -> RealTimeAnalysisViewModel,
+        historyViewModel: @autoclosure @escaping () -> HistoryViewModel
+    ) {
+        _analysisViewModel = StateObject(wrappedValue: analysisViewModel())
+        _contentViewModel = StateObject(wrappedValue: contentViewModel())
+        _realTimeViewModel = StateObject(wrappedValue: realTimeViewModel())
+        _historyViewModel = StateObject(wrappedValue: historyViewModel())
+    }
 
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 20) {
-                    TextEditorView(text: $inputText)
+                    TextEditorView(text: $contentViewModel.inputText)
 
                     HStack(spacing: 12) {
                         Button(action: { showingScanner = true }) {
@@ -40,21 +51,35 @@ struct ContentView: View {
                         .buttonStyle(.bordered)
                     }
 
-                    AnalysisButton(viewModel: viewModel, text: inputText)
+                    RealTimeAnalysisView(
+                        text: $contentViewModel.inputText,
+                        viewModel: realTimeViewModel
+                    )
 
-                    AnalysisResultsView(viewModel: viewModel)
+                    AnalysisButton(
+                        viewModel: analysisViewModel,
+                        text: contentViewModel.inputText,
+                        isBlockedByFilter: realTimeViewModel.isBlockedByToxicityFilter
+                    )
 
-                    if let result = viewModel.result {
+                    AnalysisResultsView(viewModel: analysisViewModel)
+
+                    if let result = analysisViewModel.result {
                         ExportButtonsView(
-                            onExportText: { prepareExportText(from: result) },
-                            onExportPDF: { prepareExportPDF(from: result) }
+                            onExportText: { contentViewModel.prepareTextExport(from: result) },
+                            onExportPDF: { contentViewModel.preparePDFExport(from: result) }
                         )
                     }
 
-                    TestCasesView(viewModel: viewModel, inputText: $inputText)
+                    TestCasesView(
+                        viewModel: analysisViewModel,
+                        inputText: $contentViewModel.inputText
+                    )
 
                     Button("Запустить автотесты") {
-                        runTests()
+                        contentViewModel.runAutoTests { text in
+                            analysisViewModel.analyzeText(text)
+                        }
                     }
                     .frame(maxWidth: .infinity)
                     .padding()
@@ -62,7 +87,7 @@ struct ContentView: View {
                     .foregroundColor(.white)
                     .cornerRadius(10)
 
-                    AnalysisDetailsView(viewModel: viewModel, isExpanded: $showingDetails)
+                    AnalysisDetailsView(viewModel: analysisViewModel, isExpanded: $showingDetails)
                 }
                 .padding()
             }
@@ -81,14 +106,14 @@ struct ContentView: View {
             }
         }
         .sheet(isPresented: $showingScanner) {
-            PhotoImportView(importedText: $inputText, isPresented: $showingScanner)
+            PhotoImportView(importedText: $contentViewModel.inputText, isPresented: $showingScanner)
         }
         .sheet(isPresented: $showingPhotoPicker) {
-            PhotoPickerView(importedText: $inputText, isPresented: $showingPhotoPicker)
+            PhotoPickerView(importedText: $contentViewModel.inputText, isPresented: $showingPhotoPicker)
         }
         .sheet(isPresented: $showingHistory) {
             NavigationView {
-                HistoryView()
+                HistoryView(viewModel: historyViewModel)
                     .navigationTitle("История анализов")
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
@@ -98,66 +123,28 @@ struct ContentView: View {
             }
         }
         .fileExporter(
-            isPresented: $isExporting,
-            document: exportDocument,
-            contentType: exportDocument?.contentType ?? .plainText,
-            defaultFilename: exportFileName
-        ) { _ in }
+            isPresented: $contentViewModel.isExporting,
+            document: contentViewModel.exportDocument,
+            contentType: contentViewModel.exportDocument?.contentType ?? .plainText,
+            defaultFilename: contentViewModel.exportFileName
+        ) { _ in
+            contentViewModel.finishExport()
+        }
+        .onAppear {
+            contentViewModel.consumeSharedTextIfNeeded { text in
+                analysisViewModel.analyzeText(text)
+            }
+        }
         .onChange(of: appState.quickAction) { action in
             guard let action else { return }
             switch action {
             case .newAnalysis:
-                inputText = ""
-                viewModel.clearResults()
+                contentViewModel.inputText = ""
+                analysisViewModel.clearResults()
             case .openHistory:
                 showingHistory = true
             }
             appState.quickAction = nil
-        }
-    }
-}
-
-private extension ContentView {
-    func prepareExportText(from result: TextAnalysisResult) {
-        let text = AnalysisExportService.makeText(from: result)
-        exportDocument = AnalysisExportDocument(
-            data: Data(text.utf8),
-            contentType: .plainText
-        )
-        exportFileName = fileName(for: result, ext: "txt")
-        isExporting = true
-    }
-
-    func prepareExportPDF(from result: TextAnalysisResult) {
-        let data = AnalysisExportService.makePDFData(from: result)
-        exportDocument = AnalysisExportDocument(
-            data: data,
-            contentType: .pdf
-        )
-        exportFileName = fileName(for: result, ext: "pdf")
-        isExporting = true
-    }
-
-    func fileName(for result: TextAnalysisResult, ext: String) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd_HH-mm"
-        let date = formatter.string(from: result.timestamp)
-        return "sentiment_\(date).\(ext)"
-    }
-
-    func runTests() {
-        let testTexts = [
-            "Это отличный день! Я счастлив.",
-            "Все ужасно, ничего не работает.",
-            "Сегодня обычный день, ничего особенного.",
-            "Ты дурак, иди отсюда!"
-        ]
-
-        for (index, text) in testTexts.enumerated() {
-            DispatchQueue.main.asyncAfter(deadline: .now() + Double(index) * 2) {
-                inputText = text
-                viewModel.analyzeText(text)
-            }
         }
     }
 }

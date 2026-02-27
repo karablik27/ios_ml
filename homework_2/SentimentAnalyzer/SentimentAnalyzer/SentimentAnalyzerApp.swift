@@ -10,15 +10,28 @@ import SwiftUI
 @main
 struct SentimentAnalyzerApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
-    @StateObject private var appState = AppState()
+    @StateObject private var appState: AppState
+    private let sentimentComponent: any SentimentComponentProtocol
 
     init() {
-        appDelegate.appState = appState
+        let state = AppState()
+        _appState = StateObject(wrappedValue: state)
+
+        let di = AppDI.shared
+        self.sentimentComponent = SentimentComponent(
+            sentimentAnalyzer: di.sentimentAnalyzer,
+            quickAnalyzer: di.quickAnalyzer,
+            historyStore: di.historyStore,
+            exportService: di.exportService,
+            sharedTextConsumer: di.sharedTextConsumer
+        )
+
+        appDelegate.appState = state
     }
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            sentimentComponent.view.eraseToAnyView()
                 .environmentObject(appState)
         }
     }

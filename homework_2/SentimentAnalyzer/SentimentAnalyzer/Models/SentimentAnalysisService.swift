@@ -4,7 +4,7 @@
 import NaturalLanguage
 import CoreML
 
-final class SentimentAnalysisService {
+final class SentimentAnalysisService: SentimentAnalyzing {
     private lazy var customNLModel: NLModel? = {
         // Ищем скомпилированную модель в бандле (.mlmodelc)
         if let url = Bundle.main.url(forResource: "SentimentClassifier", withExtension: "mlmodelc"),
@@ -79,6 +79,15 @@ final class SentimentAnalysisService {
                                  value: "Обнаружен потенциально токсичный контент",
                                  type: .warning))
         }
+
+        let emotion = detectEmotion(
+            text: text,
+            sentiment: sentiment,
+            toxicityScore: toxicity.score
+        )
+        details.append(.init(title: "Эмоция",
+                             value: "\(emotion.emoji) \(emotion.rawValue)",
+                             type: .info))
         
         let intent = detectIntent(text)
         details.append(.init(title: "Интент",
@@ -107,7 +116,9 @@ final class SentimentAnalysisService {
         return TextAnalysisResult(
             text: text,
             sentiment: sentiment,
+            emotion: emotion,
             confidence: confidence,
+            toxicityScore: toxicity.score,
             language: language,
             wordCount: wordCount,
             entities: entities,
@@ -297,6 +308,48 @@ final class SentimentAnalysisService {
         }
 
         return .statement
+    }
+
+    private func detectEmotion(
+        text: String,
+        sentiment: Sentiment,
+        toxicityScore: Double
+    ) -> Emotion {
+        if toxicityScore >= 0.55 {
+            return .anger
+        }
+
+        let lower = text.lowercased()
+        let joyWords = ["рад", "счаст", "класс", "отлич", "супер", "люблю", "доволен", "ура"]
+        let sadnessWords = ["груст", "печал", "тоск", "устал", "разочар", "жаль"]
+        let angerWords = ["бесит", "злит", "ненавиж", "ужас", "кошмар", "отстой"]
+        let fearWords = ["боюсь", "страш", "тревог", "паник", "опасно"]
+        let calmWords = ["спокой", "нормально", "ровно", "стабильно", "тихо"]
+
+        if joyWords.contains(where: { lower.contains($0) }) {
+            return .joy
+        }
+        if sadnessWords.contains(where: { lower.contains($0) }) {
+            return .sadness
+        }
+        if angerWords.contains(where: { lower.contains($0) }) {
+            return .anger
+        }
+        if fearWords.contains(where: { lower.contains($0) }) {
+            return .fear
+        }
+        if calmWords.contains(where: { lower.contains($0) }) {
+            return .calm
+        }
+
+        switch sentiment {
+        case .positive:
+            return .joy
+        case .negative:
+            return .sadness
+        case .neutral:
+            return .neutral
+        }
     }
 
     private func analyzeReadability(
