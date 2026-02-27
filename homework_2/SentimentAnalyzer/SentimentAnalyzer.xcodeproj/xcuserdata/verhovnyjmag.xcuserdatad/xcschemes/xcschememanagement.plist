@@ -9,6 +9,34 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>SentimentWidgetExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>ShareExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>54B7E1A03EC04F07A749A492</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>670D8CB1D6F644708D255E8F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>90C4E2142F23D03300C38486</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

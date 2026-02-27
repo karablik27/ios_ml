@@ -95,6 +95,20 @@ struct SentimentCard: View {
                 .font(.caption)
                 .foregroundColor(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
+
+            if let emotion = result.emotion {
+                Text("Эмоция: \(emotion.emoji) \(emotion.rawValue)")
+                    .font(.caption)
+                    .foregroundColor(emotion.color)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+
+            if let toxicity = result.toxicityScore {
+                Text("Токсичность: \(Int(toxicity * 100))%")
+                    .font(.caption)
+                    .foregroundColor(toxicity >= 0.5 ? .orange : .secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
         }
         .padding()
         .background(

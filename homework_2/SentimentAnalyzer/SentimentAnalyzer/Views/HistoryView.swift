@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct HistoryView: View {
-    @AppStorage("analysisHistory") private var historyData: Data = Data()
-    @State private var history: [TextAnalysisResult] = []
+    @ObservedObject var viewModel: HistoryViewModel
 
     var body: some View {
         Group {
-            if history.isEmpty {
+            if viewModel.isEmpty {
                 VStack(spacing: 16) {
-                    StatisticsView(stats: emptyStats())
+                    StatisticsView(
+                        stats: viewModel.sentimentStats,
+                        emotionStats: viewModel.emotionStats,
+                        dailyStats: viewModel.dailyStats
+                    )
 
                     VStack(spacing: 8) {
                         Image(systemName: "clock")
@@ -31,69 +34,31 @@ struct HistoryView: View {
             } else {
                 List {
                     Section {
-                        StatisticsView(stats: makeStats())
+                        StatisticsView(
+                            stats: viewModel.sentimentStats,
+                            emotionStats: viewModel.emotionStats,
+                            dailyStats: viewModel.dailyStats
+                        )
                             .listRowInsets(EdgeInsets())
                             .listRowBackground(Color.clear)
                     }
 
                     Section {
-                        ForEach(history, id: \.timestamp) { result in
+                        ForEach(viewModel.history, id: \.timestamp) { result in
                             HistoryRow(result: result)
                         }
-                        .onDelete(perform: deleteItems)
+                        .onDelete(perform: viewModel.deleteItems)
                     }
                 }
                 .listStyle(.plain)
             }
         }
-        .onAppear(perform: loadHistory)
-        .onChange(of: historyData) { _ in
-            loadHistory()
+        .onAppear {
+            viewModel.loadHistory()
         }
-    }
-
-    private func loadHistory() {
-        guard
-            !historyData.isEmpty,
-            let decoded = try? JSONDecoder().decode([TextAnalysisResult].self, from: historyData)
-        else {
-            history = []
-            return
+        .onReceive(NotificationCenter.default.publisher(for: UserDefaults.didChangeNotification)) { _ in
+            viewModel.loadHistory()
         }
-        history = decoded.sorted { $0.timestamp > $1.timestamp }
-    }
-
-    private func deleteItems(at offsets: IndexSet) {
-        history.remove(atOffsets: offsets)
-        saveHistory()
-    }
-
-    private func saveHistory() {
-        guard let encoded = try? JSONEncoder().encode(history) else {
-            historyData = Data()
-            return
-        }
-        historyData = encoded
-    }
-
-    private func makeStats() -> [SentimentStat] {
-        let grouped = Dictionary(grouping: history, by: { $0.sentiment })
-        let positive = grouped[.positive]?.count ?? 0
-        let neutral = grouped[.neutral]?.count ?? 0
-        let negative = grouped[.negative]?.count ?? 0
-        return [
-            SentimentStat(id: "positive", sentiment: .positive, count: positive),
-            SentimentStat(id: "neutral", sentiment: .neutral, count: neutral),
-            SentimentStat(id: "negative", sentiment: .negative, count: negative)
-        ]
-    }
-
-    private func emptyStats() -> [SentimentStat] {
-        [
-            SentimentStat(id: "positive", sentiment: .positive, count: 0),
-            SentimentStat(id: "neutral", sentiment: .neutral, count: 0),
-            SentimentStat(id: "negative", sentiment: .negative, count: 0)
-        ]
     }
 }
 
@@ -113,6 +78,16 @@ private struct HistoryRow: View {
                         .foregroundColor(result.sentiment.color)
 
                     Text(result.sentiment.emoji)
+
+                    if let emotion = result.emotion {
+                        Text(emotion.emoji)
+                    }
+
+                    if let toxicity = result.toxicityScore {
+                        Text("☣︎ \(Int(toxicity * 100))%")
+                            .font(.caption2)
+                            .foregroundColor(toxicity >= 0.5 ? .orange : .secondary)
+                    }
 
                     Spacer()
 

@@ -30,10 +30,43 @@ enum Sentiment: String, Codable {
     }
 }
 
+enum Emotion: String, Codable {
+    case joy = "Радость"
+    case sadness = "Грусть"
+    case anger = "Злость"
+    case fear = "Тревога"
+    case calm = "Спокойствие"
+    case neutral = "Нейтрально"
+
+    var color: Color {
+        switch self {
+        case .joy: return .yellow
+        case .sadness: return .blue
+        case .anger: return .red
+        case .fear: return .orange
+        case .calm: return .mint
+        case .neutral: return .gray
+        }
+    }
+
+    var emoji: String {
+        switch self {
+        case .joy: return "😄"
+        case .sadness: return "😢"
+        case .anger: return "😡"
+        case .fear: return "😨"
+        case .calm: return "😌"
+        case .neutral: return "😐"
+        }
+    }
+}
+
 struct TextAnalysisResult: Codable {
     let text: String
     let sentiment: Sentiment
+    let emotion: Emotion?
     let confidence: Double
+    let toxicityScore: Double?
     let language: String
     let wordCount: Int
     let entities: [String]

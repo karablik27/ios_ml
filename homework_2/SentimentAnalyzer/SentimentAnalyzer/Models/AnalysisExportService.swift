@@ -18,7 +18,13 @@ enum AnalysisExportService {
         lines.append(result.text)
         lines.append("")
         lines.append("Результат: \(result.sentiment.rawValue) \(result.sentiment.emoji)")
+        if let emotion = result.emotion {
+            lines.append("Эмоция: \(emotion.rawValue) \(emotion.emoji)")
+        }
         lines.append("Уверенность: \(Int(result.confidence * 100))%")
+        if let toxicity = result.toxicityScore {
+            lines.append("Токсичность: \(Int(toxicity * 100))%")
+        }
         lines.append("Язык: \(result.language)")
         lines.append("Слов: \(result.wordCount)")
         if !result.entities.isEmpty {

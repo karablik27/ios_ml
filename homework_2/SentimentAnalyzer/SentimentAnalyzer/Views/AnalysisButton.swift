@@ -10,14 +10,22 @@ import SwiftUI
 struct AnalysisButton: View {
     @ObservedObject var viewModel: AnalysisViewModel
     let text: String
+    let isBlockedByFilter: Bool
 
     var body: some View {
         Button(action: {
             viewModel.analyzeText(text)
         }) {
             HStack {
-                Image(systemName: "text.magnifyingglass")
-                Text("Анализировать тональность")
+                if viewModel.isAnalyzing {
+                    ProgressView()
+                        .progressViewStyle(.circular)
+                        .tint(.white)
+                } else {
+                    Image(systemName: "text.magnifyingglass")
+                }
+
+                Text(viewModel.isAnalyzing ? "Анализ..." : "Анализировать тональность")
                     .fontWeight(.semibold)
             }
             .frame(maxWidth: .infinity)
@@ -26,7 +34,7 @@ struct AnalysisButton: View {
             .foregroundColor(.white)
             .cornerRadius(10)
         }
-        .disabled(text.isEmpty)
-        .opacity(text.isEmpty ? 0.6 : 1)
+        .disabled(text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || viewModel.isAnalyzing || isBlockedByFilter)
+        .opacity((text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || isBlockedByFilter) ? 0.6 : 1)
     }
 }

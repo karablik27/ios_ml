@@ -6,22 +6,28 @@
 //
 
 import Foundation
-import NaturalLanguage
-import SwiftUI
 import Combine
 
 @MainActor
-class AnalysisViewModel: ObservableObject {
+final class AnalysisViewModel: ObservableObject {
     @Published var result: TextAnalysisResult?
     @Published var isAnalyzing = false
     @Published var analysisDetails: [TextAnalysisResult.AnalysisDetail] = []
     @Published var errorMessage: String?
-    
-    private let analyzer = SentimentAnalysisService()
-    private let historyKey = "analysisHistory"
+
+    private let analyzer: SentimentAnalyzing
+    private let historyStore: AnalysisHistoryStoring
+
+    init(
+        analyzer: SentimentAnalyzing = SentimentAnalysisService(),
+        historyStore: AnalysisHistoryStoring = SharedUserDefaultsHistoryStore()
+    ) {
+        self.analyzer = analyzer
+        self.historyStore = historyStore
+    }
     
     func analyzeText(_ text: String) {
-        guard !text.isEmpty else { return }
+        guard !text.isEmpty, !isAnalyzing else { return }
         
         isAnalyzing = true
         errorMessage = nil
@@ -47,27 +53,11 @@ class AnalysisViewModel: ObservableObject {
     }
 
     private func appendToHistory(_ result: TextAnalysisResult) {
-        var history = loadHistory()
+        var history = historyStore.loadHistory()
         history.insert(result, at: 0)
         if history.count > 100 {
             history = Array(history.prefix(100))
         }
-        saveHistory(history)
-    }
-
-    private func loadHistory() -> [TextAnalysisResult] {
-        guard
-            let data = UserDefaults.standard.data(forKey: historyKey),
-            !data.isEmpty,
-            let decoded = try? JSONDecoder().decode([TextAnalysisResult].self, from: data)
-        else {
-            return []
-        }
-        return decoded
-    }
-
-    private func saveHistory(_ history: [TextAnalysisResult]) {
-        guard let data = try? JSONEncoder().encode(history) else { return }
-        UserDefaults.standard.set(data, forKey: historyKey)
+        historyStore.saveHistory(history)
     }
 }
