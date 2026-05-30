@@ -1,0 +1,69 @@
+{
+  "offers": [
+    {
+      "id": "apt_001",
+      "price": 18500000,
+      "area": 54.3,
+      "rooms": 2,
+      "floor": 7,
+      "buildYear": 2018,
+      "address": "Москва, ул. Тверская, 7",
+      "district": "ЦАО",
+      "metro": "Охотный ряд",
+      "latitude": 55.751244,
+      "longitude": 37.618423
+    },
+    {
+      "id": "apt_002",
+      "price": 24500000,
+      "area": 72.8,
+      "rooms": 3,
+      "floor": 12,
+      "buildYear": 2020,
+      "address": "Москва, Пресненская наб., 12",
+      "district": "ЦАО",
+      "metro": "Деловой центр",
+      "latitude": 55.749814,
+      "longitude": 37.537098
+    },
+    {
+      "id": "apt_003",
+      "price": 12900000,
+      "area": 38.5,
+      "rooms": 1,
+      "floor": 4,
+      "buildYear": 2015,
+      "address": "Москва, Ленинский проспект, 34",
+      "district": "ЮЗАО",
+      "metro": "Ленинский проспект",
+      "latitude": 55.707392,
+      "longitude": 37.582778
+    },
+    {
+      "id": "apt_004",
+      "price": 31000000,
+      "area": 95.2,
+      "rooms": 4,
+      "floor": 15,
+      "buildYear": 2022,
+      "address": "Москва, Ходынский бульвар, 20",
+      "district": "САО",
+      "metro": "ЦСКА",
+      "latitude": 55.789236,
+      "longitude": 37.523764
+    },
+    {
+      "id": "apt_005",
+      "price": 21000000,
+      "area": 60.0,
+      "rooms": 2,
+      "floor": 9,
+      "buildYear": 2019,
+      "address": "Москва, ул. Профсоюзная, 64",
+      "district": "ЮЗАО",
+      "metro": "Калужская",
+      "latitude": 55.656721,
+      "longitude": 37.540995
+    }
+  ]
+}
