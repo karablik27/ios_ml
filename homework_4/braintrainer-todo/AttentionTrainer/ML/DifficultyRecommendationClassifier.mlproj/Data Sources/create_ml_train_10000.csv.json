@@ -1,0 +1,22 @@
+{
+  "activityEntities" : [
+
+  ],
+  "createdDate" : "2026-05-31T16:05:01Z",
+  "dataPathRelativeToProjectURL" : "../../../../../../../Downloads/create_ml_train_10000.csv/",
+  "dataResult" : {
+    "createdDate" : "2026-05-31T16:05:01Z",
+    "dataSourceID" : "00CC376A-02DE-45D0-8A7F-26A735691CA4",
+    "dataURL" : "file:///Users/verhovnyjmag/Downloads/create_ml_train_10000.csv"
+  },
+  "dataURL" : "file:///Users/verhovnyjmag/Downloads/create_ml_train_10000.csv",
+  "experimentIDs" : [
+    "9C4B83AE-E132-4797-B251-74C4C890DA88"
+  ],
+  "id" : "00CC376A-02DE-45D0-8A7F-26A735691CA4",
+  "modifiedDate" : "2026-05-31T16:05:01Z",
+  "pathType" : 0,
+  "preferredFilename" : "create_ml_train_10000.csv",
+  "title" : "create_ml_train_10000.csv",
+  "version" : "1.0"
+}

@@ -1,0 +1,22 @@
+{
+  "activityEntities" : [
+
+  ],
+  "createdDate" : "2026-05-31T16:06:38Z",
+  "dataPathRelativeToProjectURL" : "../create_ml_test_10000.csv/",
+  "dataResult" : {
+    "createdDate" : "2026-05-31T16:06:38Z",
+    "dataSourceID" : "9FD70BC0-837D-47DC-B2F2-80D1385E7CD2",
+    "dataURL" : "file:///Users/verhovnyjmag/Desktop/ios_ml_course/homework_4/braintrainer-todo/AttentionTrainer/ML/create_ml_test_10000.csv"
+  },
+  "dataURL" : "file:///Users/verhovnyjmag/Desktop/ios_ml_course/homework_4/braintrainer-todo/AttentionTrainer/ML/create_ml_test_10000.csv",
+  "experimentIDs" : [
+    "9C4B83AE-E132-4797-B251-74C4C890DA88"
+  ],
+  "id" : "9FD70BC0-837D-47DC-B2F2-80D1385E7CD2",
+  "modifiedDate" : "2026-05-31T16:06:38Z",
+  "pathType" : 0,
+  "preferredFilename" : "create_ml_test_10000.csv",
+  "title" : "create_ml_test_10000.csv",
+  "version" : "1.0"
+}
