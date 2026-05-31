@@ -1,0 +1,29 @@
+{
+  "activityEntities" : [
+    "projectCreated",
+    [
+      {
+        "createdDate" : "2026-05-31T16:04:54Z",
+        "event" : "projectCreated",
+        "id" : "FF7B369E-19E5-4D9F-BB97-344F3B2B4BFD",
+        "subtitle" : "DifficultyRecommendationClassifier",
+        "title" : "Project Created"
+      }
+    ]
+  ],
+  "authorName" : "Верховный Маг",
+  "createdDate" : "2026-05-31T16:04:54Z",
+  "description" : "",
+  "id" : "81031C76-2FE1-4C58-B4C7-289B1F5157B5",
+  "license" : "",
+  "location" : "",
+  "modifiedDate" : "2026-05-31T16:04:54Z",
+  "projectName" : "DifficultyRecommendationClassifier",
+  "settingsEntity" : {
+    "snapshotOnExtendTraining" : true,
+    "snapshotOnResumeTraining" : false
+  },
+  "taskType" : "generalClassifier",
+  "title" : "Tabular Classification",
+  "version" : "1.1"
+}

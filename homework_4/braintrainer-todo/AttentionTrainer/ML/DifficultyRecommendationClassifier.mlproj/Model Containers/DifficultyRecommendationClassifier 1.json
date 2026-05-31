@@ -1,0 +1,645 @@
+{
+  "activityEntities" : [
+    "trainingDataAdded",
+    [
+      {
+        "createdDate" : "2026-05-31T16:06:25Z",
+        "event" : "trainingDataAdded",
+        "id" : "7C1CEDEB-4270-4C1D-9A31-6B6EF3A89177",
+        "subtitle" : "create_ml_train_10000.csv",
+        "title" : "Training Data Added"
+      }
+    ],
+    "trainingFinished",
+    [
+      {
+        "createdDate" : "2026-05-31T16:06:43Z",
+        "event" : "trainingFinished",
+        "id" : "BF626117-60C5-4C85-8D88-EE570CC549AB",
+        "subtitle" : "10 iterations",
+        "title" : "Training Completed"
+      }
+    ],
+    "trainingStarted",
+    [
+      {
+        "createdDate" : "2026-05-31T16:06:40Z",
+        "event" : "trainingStarted",
+        "id" : "FB55771D-F49E-48A6-998A-D37437659ABC",
+        "subtitle" : "DifficultyRecommendationClassifier 1",
+        "title" : "Training Started"
+      }
+    ],
+    "experimentCreated",
+    [
+      {
+        "createdDate" : "2026-05-31T16:04:55Z",
+        "event" : "experimentCreated",
+        "id" : "21435756-C173-402F-8FD1-6486B333B000",
+        "subtitle" : "DifficultyRecommendationClassifier 1",
+        "title" : "Model Source Created"
+      }
+    ],
+    "evaluationFinished",
+    [
+      {
+        "createdDate" : "2026-05-31T16:06:49Z",
+        "event" : "evaluationFinished",
+        "id" : "1F2DA759-89B7-4861-8808-0E45A6E1AFFD",
+        "subtitle" : "DifficultyRecommendationClassifier 1",
+        "title" : "Testing Completed"
+      }
+    ],
+    "evaluationStarted",
+    [
+      {
+        "createdDate" : "2026-05-31T16:06:45Z",
+        "event" : "evaluationStarted",
+        "id" : "6863B3B2-D184-416F-9155-5B4164D7256A",
+        "subtitle" : "DifficultyRecommendationClassifier 1",
+        "title" : "Testing Started"
+      }
+    ],
+    "evaluationDataAdded",
+    [
+      {
+        "createdDate" : "2026-05-31T16:06:38Z",
+        "event" : "evaluationDataAdded",
+        "id" : "BF9A7C23-1181-4C65-A37C-1B86F89C6FE1",
+        "subtitle" : "create_ml_test_10000.csv",
+        "title" : "Testing Data Added"
+      }
+    ]
+  ],
+  "contentDataResult" : {
+    "createdDate" : "2026-05-31T16:05:01Z"
+  },
+  "createdDate" : "2026-05-31T16:04:55Z",
+  "evaluationContainerEntity" : {
+    "createdDate" : "2026-05-31T16:06:49Z",
+    "evaluationEntities" : [
+
+    ],
+    "id" : "d1e7966c-8bff-47fd-a97b-d27d1a2c3561",
+    "modifiedDate" : "2026-05-31T16:06:49Z",
+    "previewType" : "tabularClassifier",
+    "testingEvaluationEntity" : {
+      "accuracy" : 1,
+      "analysedDataType" : "datasource",
+      "createdDate" : "2026-05-31T16:04:55Z",
+      "dataResult" : {
+        "classesCount" : 3,
+        "columnTypes" : [
+          "Double",
+          "Double",
+          "Double",
+          "Double",
+          "Int",
+          "Int",
+          "Double",
+          "Double",
+          "Double",
+          "Int",
+          "String"
+        ],
+        "columnValues" : [
+          "0,53, 0,20, 0,27, 0,17, 0,85, 0,89, 0,21, 0,17, 0,42, 0,95, 0,98, 0,88, 0,93, 0,56, 0,89, 0,92, 0,22, 0,35, 0,93, 0,97, 0,93, 0,27, 0,18, 0,36, 0,81, 0,38, 0,83, 0,39, 0,32, 0,85",
+          "24,80, 53,90, 12,70, 34,10, 74,20, 68,60, 26,10, 41,40, 26,30, 91,80, 81,50, 78,50, 82,70, 66,10, 78,70, 76,00, 21,20, 19,50, 69,40, 88,60, 82,40, 35,30, 13,00, 31,50, 75,10, 26,90, 79,00, 38,80, 35,00, 86,30",
+          "161,00, 129,00, 135,60, 143,80, 70,90, 66,70, 165,80, 120,80, 141,90, 63,80, 43,30, 78,10, 101,50, 91,20, 61,50, 76,20, 153,90, 162,20, 91,90, 66,00, 62,40, 159,00, 163,80, 180,00, 70,90, 95,50, 60,40, 95,50, 174,10, 35,20",
+          "3,71, 2,59, 3,95, 2,97, 2,16, 2,36, 3,33, 3,65, 4,19, 1,89, 2,07, 2,09, 2,32, 2,53, 1,87, 2,38, 4,15, 3,91, 2,45, 1,67, 2,03, 3,56, 3,65, 3,70, 2,11, 3,68, 2,03, 3,12, 4,01, 1,40",
+          "6, 16, 15, 10, 3, 3, 11, 11, 15, 4, 0, 1, 2, 3, 2, 2, 17, 14, 0, 0, 0, 14, 13, 15, 3, 10, 7, 12, 10, 2",
+          "6, 3, 6, 4, 3, 1, 4, 8, 5, 3, 2, 6, 5, 5, 3, 5, 8, 8, 7, 5, 5, 8, 4, 6, 3, 2, 3, 3, 8, 1",
+          "0,55, 0,16, 0,27, 0,18, 0,57, 0,83, 0,17, 0,12, 0,64, 0,86, 0,94, 0,85, 0,94, 0,67, 0,86, 0,93, 0,22, 0,08, 0,87, 0,91, 0,99, 0,29, 0,12, 0,60, 0,93, 0,37, 0,89, 0,20, 0,43, 0,78",
+          "31,00, 50,90, 5,00, 31,20, 75,50, 62,60, 20,70, 41,60, 37,40, 91,50, 81,70, 92,50, 85,10, 79,90, 85,00, 83,30, 27,40, 30,50, 85,20, 92,90, 83,10, 20,60, 27,90, 48,00, 80,10, 10,80, 88,10, 57,60, 64,80, 89,10",
+          "-0,19, -0,07, -0,30, 0,00, -0,14, 0,19, -0,04, 0,01, -0,32, 0,23, -0,09, 0,31, -0,01, -0,12, -0,26, 0,20, -0,11, -0,21, 0,11, 0,17, -0,07, -0,03, -0,02, -0,06, 0,07, -0,05, 0,06, -0,15, 0,04, 0,23",
+          "6, 3, 1, 7, 1, 5, 8, 5, 7, 7, 7, 4, 5, 3, 10, 2, 7, 1, 5, 7, 5, 3, 7, 5, 5, 1, 5, 5, 1, 10",
+          "downgrade, downgrade, downgrade, downgrade, maintain, maintain, downgrade, downgrade, downgrade, upgrade, upgrade, upgrade, upgrade, maintain, maintain, maintain, downgrade, downgrade, upgrade, upgrade, upgrade, downgrade, downgrade, downgrade, upgrade, downgrade, upgrade, downgrade, downgrade, upgrade"
+        ],
+        "columns" : [
+          "accuracy",
+          "performanceScore",
+          "totalTime",
+          "averageReactionTime",
+          "incorrectAnswers",
+          "currentDifficulty",
+          "recentAvgAccuracy",
+          "recentAvgPerformance",
+          "trendScore",
+          "gamesOnCurrentLevel",
+          "recommendation"
+        ],
+        "createdDate" : "2026-05-31T16:05:01Z",
+        "dataAnalysis" : {
+          "classifierAnalysis" : {
+
+          },
+          "issues" : [
+            {
+              "description" : "Data has 10000 rows",
+              "severity" : "info"
+            }
+          ],
+          "objectDetectorAnalysis" : {
+            "details" : {
+
+            }
+          },
+          "summary" : {
+            "canUseValidation" : 1,
+            "classCount" : 3,
+            "sampleCount" : 10000
+          }
+        },
+        "dataSourceID" : "9FD70BC0-837D-47DC-B2F2-80D1385E7CD2",
+        "dataURL" : "file:///Users/verhovnyjmag/Desktop/ios_ml_course/homework_4/braintrainer-todo/AttentionTrainer/ML/create_ml_test_10000.csv",
+        "itemsCount" : 10000
+      },
+      "dataSourceID" : "9FD70BC0-837D-47DC-B2F2-80D1385E7CD2",
+      "evaluationResult" : {
+        "generalClassifier" : {
+          "accuracy" : 1,
+          "statsByLabel" : {
+            "downgrade" : {
+              "count" : 3333,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            },
+            "maintain" : {
+              "count" : 3333,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            },
+            "upgrade" : {
+              "count" : 3334,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            }
+          }
+        }
+      },
+      "finishTime" : "2026-05-31T16:06:49Z",
+      "id" : "620e0f30-3cf4-47a4-a900-fe4d29749ecb",
+      "startTime" : "2026-05-31T16:06:45Z"
+    },
+    "trainingEvaluationEntity" : {
+      "analysedDataType" : "none",
+      "createdDate" : "2026-05-31T16:04:55Z",
+      "dataResult" : {
+        "classesCount" : 3,
+        "createdDate" : "2026-05-31T16:05:01Z",
+        "dataAnalysis" : {
+          "classifierAnalysis" : {
+
+          },
+          "issues" : [
+            {
+              "description" : "Data has 10000 rows",
+              "severity" : "info"
+            }
+          ],
+          "objectDetectorAnalysis" : {
+            "details" : {
+
+            }
+          },
+          "summary" : {
+            "canUseValidation" : 1,
+            "classCount" : 3,
+            "sampleCount" : 10000
+          }
+        },
+        "dataSourceID" : "C617F9F3-F4A1-421A-9A19-52CA7FFAAF95",
+        "dataURL" : "file:///Users/verhovnyjmag/Desktop/ios_ml_course/homework_4/braintrainer-todo/AttentionTrainer/ML/create_ml_train_10000.csv",
+        "itemsCount" : 10000
+      },
+      "dataSourceID" : "C617F9F3-F4A1-421A-9A19-52CA7FFAAF95",
+      "evaluationResult" : {
+        "generalClassifier" : {
+          "accuracy" : 1,
+          "confusionMatrix" : [
+            {
+              "actual" : "downgrade",
+              "count" : 2974,
+              "expected" : "downgrade"
+            },
+            {
+              "actual" : "maintain",
+              "count" : 3027,
+              "expected" : "maintain"
+            },
+            {
+              "actual" : "upgrade",
+              "count" : 2999,
+              "expected" : "upgrade"
+            }
+          ],
+          "statsByLabel" : {
+            "downgrade" : {
+              "count" : 2974,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            },
+            "maintain" : {
+              "count" : 3027,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            },
+            "upgrade" : {
+              "count" : 2999,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            }
+          }
+        }
+      },
+      "id" : "dc7b9b3d-377f-4921-90b5-208375b375a3"
+    },
+    "validationEvaluationEntity" : {
+      "analysedDataType" : "auto",
+      "createdDate" : "2026-05-31T16:04:55Z",
+      "dataResult" : {
+        "createdDate" : "2026-05-31T16:05:01Z"
+      },
+      "evaluationResult" : {
+        "generalClassifier" : {
+          "accuracy" : 1,
+          "confusionMatrix" : [
+            {
+              "actual" : "downgrade",
+              "count" : 359,
+              "expected" : "downgrade"
+            },
+            {
+              "actual" : "maintain",
+              "count" : 306,
+              "expected" : "maintain"
+            },
+            {
+              "actual" : "upgrade",
+              "count" : 335,
+              "expected" : "upgrade"
+            }
+          ],
+          "statsByLabel" : {
+            "downgrade" : {
+              "count" : 359,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            },
+            "maintain" : {
+              "count" : 306,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            },
+            "upgrade" : {
+              "count" : 335,
+              "precisionRecall" : {
+                "success" : {
+                  "precision" : 1,
+                  "recall" : 1
+                }
+              }
+            }
+          }
+        }
+      },
+      "id" : "a53cc097-ae56-4a98-b372-ed394e8aad87"
+    }
+  },
+  "evaluationEntity" : {
+    "analysedDataType" : "none",
+    "dataResult" : {
+
+    },
+    "id" : "672b127f-683b-4f3b-92c5-0ba1c6a2cb45"
+  },
+  "evaluationState" : "evaluated",
+  "id" : "9C4B83AE-E132-4797-B251-74C4C890DA88",
+  "modelEntity" : {
+    "createdDate" : "2026-05-31T16:04:55Z",
+    "experimentID" : "9C4B83AE-E132-4797-B251-74C4C890DA88",
+    "id" : "D82745D6-22A1-472B-8C89-5E00DC940334",
+    "modelURL" : "Models/DifficultyRecommendationClassifier%201.mlmodel",
+    "modifiedDate" : "2026-05-31T16:04:55Z",
+    "title" : "",
+    "version" : "1.0"
+  },
+  "modifiedDate" : "2026-05-31T16:06:49Z",
+  "preferredFilename" : "DifficultyRecommendationClassifier 1",
+  "settingEntity" : {
+    "algorithmType" : "maxEnt",
+    "augmentations" : [
+
+    ],
+    "featureNames" : [
+      "accuracy",
+      "performanceScore",
+      "totalTime",
+      "averageReactionTime",
+      "incorrectAnswers",
+      "currentDifficulty",
+      "recentAvgAccuracy",
+      "recentAvgPerformance",
+      "trendScore",
+      "gamesOnCurrentLevel"
+    ],
+    "generalClassifierType" : {
+      "randomForestClassifier" : {
+        "columnSubsample" : 0.8,
+        "maxDepth" : 6,
+        "minChildWeight" : 0.1,
+        "minLossReduction" : 0,
+        "rowSubsample" : 0.8
+      }
+    },
+    "handActionClassifierAugmentations" : [
+
+    ],
+    "handPoseClassifierAugmentations" : [
+
+    ],
+    "harVideoAugmentations" : 0,
+    "seedType" : "default",
+    "styleTransferAlgorithmType" : "image",
+    "suggestedColumnTypes" : [
+      "Double",
+      "Double",
+      "Double",
+      "Double",
+      "Int",
+      "Int",
+      "Double",
+      "Double",
+      "Double",
+      "Int",
+      "String"
+    ],
+    "suggestedColumnValues" : [
+      "0,90, 0,18, 0,92, 0,86, 0,61, 0,71, 0,65, 0,55, 0,76, 0,60, 0,92, 0,42, 0,17, 0,60, 0,25, 0,39, 0,28, 0,50, 0,95, 0,56, 0,20, 0,33, 0,75, 0,91, 0,68, 0,50, 0,84, 0,42, 0,86, 0,96",
+      "84,90, 42,40, 86,80, 81,90, 51,10, 59,30, 67,20, 29,90, 51,40, 72,30, 93,60, 43,80, 44,80, 25,50, 31,70, 18,70, 13,80, 71,00, 74,90, 67,80, 40,20, 28,20, 72,60, 78,50, 57,50, 36,10, 99,30, 23,70, 83,30, 89,90",
+      "50,60, 180,00, 90,80, 80,70, 98,10, 114,10, 112,80, 143,40, 72,90, 72,00, 56,90, 117,20, 115,50, 155,40, 152,70, 165,80, 166,10, 135,70, 57,20, 89,60, 109,20, 175,80, 84,00, 48,30, 92,40, 110,80, 84,60, 156,40, 55,80, 63,50",
+      "1,74, 3,42, 2,05, 2,32, 2,73, 2,59, 2,83, 3,53, 2,87, 1,93, 1,60, 3,15, 3,13, 3,84, 3,69, 3,93, 4,01, 2,60, 2,26, 2,01, 3,29, 3,37, 2,20, 2,24, 3,02, 3,45, 2,10, 3,92, 1,96, 1,94",
+      "5, 20, 4, 0, 6, 9, 6, 12, 1, 6, 4, 6, 19, 8, 12, 14, 5, 15, 1, 8, 7, 18, 2, 2, 4, 12, 0, 7, 6, 0",
+      "3, 4, 6, 8, 3, 7, 6, 6, 5, 1, 4, 5, 2, 5, 7, 6, 7, 4, 6, 4, 8, 6, 4, 1, 8, 6, 7, 7, 3, 3",
+      "0,92, 0,22, 0,89, 0,96, 0,61, 0,70, 0,67, 0,65, 0,84, 0,71, 0,88, 0,47, 0,28, 0,78, 0,26, 0,59, 0,34, 0,50, 0,91, 0,84, 0,13, 0,31, 0,87, 0,89, 0,62, 0,69, 0,89, 0,46, 0,89, 0,93",
+      "93,50, 37,70, 87,80, 78,90, 57,90, 45,00, 69,80, 33,00, 55,10, 51,60, 89,60, 56,50, 53,70, 20,00, 46,70, 31,80, 20,90, 66,10, 90,10, 79,00, 48,50, 17,60, 88,60, 80,80, 53,50, 43,70, 79,20, 29,80, 84,20, 82,80",
+      "0,13, -0,32, 0,16, -0,04, 0,16, 0,02, -0,18, -0,25, -0,06, 0,12, 0,18, -0,04, -0,02, -0,23, -0,41, -0,15, -0,03, 0,18, -0,09, -0,07, -0,04, -0,22, 0,08, 0,30, -0,10, 0,06, 0,09, -0,14, 0,02, 0,09",
+      "10, 2, 7, 1, 6, 10, 5, 2, 3, 2, 10, 5, 6, 3, 2, 5, 7, 4, 4, 5, 5, 6, 2, 6, 8, 2, 9, 5, 1, 7",
+      "upgrade, downgrade, upgrade, maintain, maintain, maintain, maintain, downgrade, maintain, maintain, upgrade, downgrade, downgrade, downgrade, downgrade, downgrade, downgrade, maintain, upgrade, maintain, downgrade, downgrade, maintain, upgrade, maintain, downgrade, upgrade, downgrade, maintain, upgrade"
+    ],
+    "suggestedColumns" : [
+      "accuracy",
+      "performanceScore",
+      "totalTime",
+      "averageReactionTime",
+      "incorrectAnswers",
+      "currentDifficulty",
+      "recentAvgAccuracy",
+      "recentAvgPerformance",
+      "trendScore",
+      "gamesOnCurrentLevel",
+      "recommendation"
+    ],
+    "targetColumn" : "recommendation",
+    "taskType" : "generalClassifier",
+    "transferLearningEmbeddingType" : "dynamic"
+  },
+  "snapshotRole" : {
+    "withoutSnapshots" : 0
+  },
+  "state" : "trained",
+  "title" : "DifficultyRecommendationClassifier 1",
+  "trainingEntity" : {
+    "analysedDataType" : "datasource",
+    "checkpointMetrics" : {
+
+    },
+    "dataResult" : {
+      "classesCount" : 3,
+      "columnTypes" : [
+        "Double",
+        "Double",
+        "Double",
+        "Double",
+        "Int",
+        "Int",
+        "Double",
+        "Double",
+        "Double",
+        "Int",
+        "String"
+      ],
+      "columnValues" : [
+        "0,90, 0,18, 0,92, 0,86, 0,61, 0,71, 0,65, 0,55, 0,76, 0,60, 0,92, 0,42, 0,17, 0,60, 0,25, 0,39, 0,28, 0,50, 0,95, 0,56, 0,20, 0,33, 0,75, 0,91, 0,68, 0,50, 0,84, 0,42, 0,86, 0,96",
+        "84,90, 42,40, 86,80, 81,90, 51,10, 59,30, 67,20, 29,90, 51,40, 72,30, 93,60, 43,80, 44,80, 25,50, 31,70, 18,70, 13,80, 71,00, 74,90, 67,80, 40,20, 28,20, 72,60, 78,50, 57,50, 36,10, 99,30, 23,70, 83,30, 89,90",
+        "50,60, 180,00, 90,80, 80,70, 98,10, 114,10, 112,80, 143,40, 72,90, 72,00, 56,90, 117,20, 115,50, 155,40, 152,70, 165,80, 166,10, 135,70, 57,20, 89,60, 109,20, 175,80, 84,00, 48,30, 92,40, 110,80, 84,60, 156,40, 55,80, 63,50",
+        "1,74, 3,42, 2,05, 2,32, 2,73, 2,59, 2,83, 3,53, 2,87, 1,93, 1,60, 3,15, 3,13, 3,84, 3,69, 3,93, 4,01, 2,60, 2,26, 2,01, 3,29, 3,37, 2,20, 2,24, 3,02, 3,45, 2,10, 3,92, 1,96, 1,94",
+        "5, 20, 4, 0, 6, 9, 6, 12, 1, 6, 4, 6, 19, 8, 12, 14, 5, 15, 1, 8, 7, 18, 2, 2, 4, 12, 0, 7, 6, 0",
+        "3, 4, 6, 8, 3, 7, 6, 6, 5, 1, 4, 5, 2, 5, 7, 6, 7, 4, 6, 4, 8, 6, 4, 1, 8, 6, 7, 7, 3, 3",
+        "0,92, 0,22, 0,89, 0,96, 0,61, 0,70, 0,67, 0,65, 0,84, 0,71, 0,88, 0,47, 0,28, 0,78, 0,26, 0,59, 0,34, 0,50, 0,91, 0,84, 0,13, 0,31, 0,87, 0,89, 0,62, 0,69, 0,89, 0,46, 0,89, 0,93",
+        "93,50, 37,70, 87,80, 78,90, 57,90, 45,00, 69,80, 33,00, 55,10, 51,60, 89,60, 56,50, 53,70, 20,00, 46,70, 31,80, 20,90, 66,10, 90,10, 79,00, 48,50, 17,60, 88,60, 80,80, 53,50, 43,70, 79,20, 29,80, 84,20, 82,80",
+        "0,13, -0,32, 0,16, -0,04, 0,16, 0,02, -0,18, -0,25, -0,06, 0,12, 0,18, -0,04, -0,02, -0,23, -0,41, -0,15, -0,03, 0,18, -0,09, -0,07, -0,04, -0,22, 0,08, 0,30, -0,10, 0,06, 0,09, -0,14, 0,02, 0,09",
+        "10, 2, 7, 1, 6, 10, 5, 2, 3, 2, 10, 5, 6, 3, 2, 5, 7, 4, 4, 5, 5, 6, 2, 6, 8, 2, 9, 5, 1, 7",
+        "upgrade, downgrade, upgrade, maintain, maintain, maintain, maintain, downgrade, maintain, maintain, upgrade, downgrade, downgrade, downgrade, downgrade, downgrade, downgrade, maintain, upgrade, maintain, downgrade, downgrade, maintain, upgrade, maintain, downgrade, upgrade, downgrade, maintain, upgrade"
+      ],
+      "columns" : [
+        "accuracy",
+        "performanceScore",
+        "totalTime",
+        "averageReactionTime",
+        "incorrectAnswers",
+        "currentDifficulty",
+        "recentAvgAccuracy",
+        "recentAvgPerformance",
+        "trendScore",
+        "gamesOnCurrentLevel",
+        "recommendation"
+      ],
+      "createdDate" : "2026-05-31T16:05:01Z",
+      "dataAnalysis" : {
+        "classifierAnalysis" : {
+
+        },
+        "issues" : [
+          {
+            "description" : "Data has 10000 rows",
+            "severity" : "info"
+          }
+        ],
+        "objectDetectorAnalysis" : {
+          "details" : {
+
+          }
+        },
+        "summary" : {
+          "canUseValidation" : 1,
+          "classCount" : 3,
+          "sampleCount" : 10000
+        }
+      },
+      "dataSourceID" : "C617F9F3-F4A1-421A-9A19-52CA7FFAAF95",
+      "dataURL" : "file:///Users/verhovnyjmag/Desktop/ios_ml_course/homework_4/braintrainer-todo/AttentionTrainer/ML/create_ml_train_10000.csv",
+      "itemsCount" : 10000
+    },
+    "dataSourceID" : "C617F9F3-F4A1-421A-9A19-52CA7FFAAF95",
+    "featureExtractionCheckpointMayBeAvailable" : false,
+    "finishTime" : "2026-05-31T16:06:43Z",
+    "progress" : [
+
+    ],
+    "snapshottableCheckpoints" : {
+
+    },
+    "startTime" : "2026-05-31T16:06:40Z",
+    "trainingAccuracy" : 1,
+    "trainingResults" : {
+      "generalClassifier" : {
+        "accuracy" : 1,
+        "confusionMatrix" : [
+          {
+            "actual" : "downgrade",
+            "count" : 2974,
+            "expected" : "downgrade"
+          },
+          {
+            "actual" : "maintain",
+            "count" : 3027,
+            "expected" : "maintain"
+          },
+          {
+            "actual" : "upgrade",
+            "count" : 2999,
+            "expected" : "upgrade"
+          }
+        ],
+        "statsByLabel" : {
+          "downgrade" : {
+            "count" : 2974,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 1
+              }
+            }
+          },
+          "maintain" : {
+            "count" : 3027,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 1
+              }
+            }
+          },
+          "upgrade" : {
+            "count" : 2999,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "validationAccuracy" : 1,
+    "validationResults" : {
+      "generalClassifier" : {
+        "accuracy" : 1,
+        "confusionMatrix" : [
+          {
+            "actual" : "downgrade",
+            "count" : 359,
+            "expected" : "downgrade"
+          },
+          {
+            "actual" : "maintain",
+            "count" : 306,
+            "expected" : "maintain"
+          },
+          {
+            "actual" : "upgrade",
+            "count" : 335,
+            "expected" : "upgrade"
+          }
+        ],
+        "statsByLabel" : {
+          "downgrade" : {
+            "count" : 359,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 1
+              }
+            }
+          },
+          "maintain" : {
+            "count" : 306,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 1
+              }
+            }
+          },
+          "upgrade" : {
+            "count" : 335,
+            "precisionRecall" : {
+              "success" : {
+                "precision" : 1,
+                "recall" : 1
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "validationEntity" : {
+    "analysedDataType" : "auto",
+    "dataResult" : {
+      "createdDate" : "2026-05-31T16:05:01Z"
+    },
+    "splitOptions" : {
+      "strategy" : {
+        "automatic" : {
+
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
